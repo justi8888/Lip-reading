@@ -1,0 +1,28 @@
+defaults:
+  - _self_
+  - dataset: my_dataset
+  - model: resnet_conformer_simple
+  - optimizer: adamw
+  - trainer: train
+  - decode: default
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+
+max_frames: 300
+max_frames_val: 300
+output_type: token
+model_type: simple
+pretrained_model_path: /data/jkuspalova/pretrained_models/model_LRS.pth
+reset_last_layer: 
+freeze_frontend: True
+freeze_encoder:
+gpus: 
+exp_dir: /data/jkuspalova/experiments
+exp_name: simple_uni
+testing: 
+result_csv: /data/jkuspalova/my_dataset/results/simple_uni.csv
+continue_training: 

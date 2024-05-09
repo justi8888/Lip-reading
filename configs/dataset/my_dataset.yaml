@@ -1,0 +1,8 @@
+defaults:
+  - _self_
+root_dir: "/data/jkuspalova/my_dataset"
+label_dir: "labels"
+train_file: "train_my_dataset_list.csv"
+val_file: "val_my_dataset_list.csv"
+test_file: "test_my_dataset_list.csv"
+

@@ -1,0 +1,28 @@
+defaults:
+  - _self_
+  - dataset: my_dataset
+  - model: resnet_conformer_complex
+  - optimizer: adamw
+  - trainer: train
+  - decode: default
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+
+max_frames: 1000
+max_frames_val: 1000
+output_type: char
+model_type: complex
+pretrained_model_path: /data/jkuspalova/pretrained_models/vsr_trlrs3vox2_base.pth
+reset_last_layer: 
+freeze_frontend: True
+freeze_encoder:
+gpus: 
+exp_dir: /data/jkuspalova/experiments
+exp_name: complex_char
+testing: 
+result_csv: /data/jkuspalova/my_dataset/results/complex.csv
+continue_training: 
